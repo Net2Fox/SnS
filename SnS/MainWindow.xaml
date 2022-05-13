@@ -1,0 +1,45 @@
+﻿<Window x:Class="SnS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SnS"
+        mc:Ignorable="d"
+        Title="Игра 'Змеи и лестницы'" Height="646.5" Width="892" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid x:Name="Pole" Margin="0,3,10,0" HorizontalAlignment="Right" Width="669" Height="597" VerticalAlignment="Top">
+            <ItemsControl ItemsSource="{Binding Cells}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Background="LightGray" Width="50" Height="50" Margin="5">
+                            <TextBlock Padding="0, 15, 0, 0" FontSize="14" Text="{Binding Path=Content}" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+
+        <Button Name="ButtonMove" Command="{Binding PlayerMoveCommand}"  Content="Сделать ход" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Width="118" Height="40"/>
+        <TextBox x:Name="TextBoxMoveNum" HorizontalAlignment="Left" Height="40" Margin="133,26,0,0" TextWrapping="Wrap" Text="{Binding Players}" VerticalAlignment="Top" Width="43" IsEnabled="True"/>
+        <ListBox x:Name="ListBoxPlayers" Margin="10,0,0,49" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}" HorizontalAlignment="Left" Width="166" Height="278" VerticalAlignment="Bottom">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock FontSize="14" Text="{Binding Path=PlayerName}"/>
+                        <TextBlock FontSize="12" Text="{Binding Path=PlayerMove}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,332" TextWrapping="Wrap" Text="Список игроков" VerticalAlignment="Bottom" Width="166" FontSize="14" TextAlignment="Center"/>
+        <Button x:Name="ButtonAddPlayer" Command="{Binding AddCommand}" Content="Добавить" HorizontalAlignment="Left" Margin="10,0,0,12" Width="75" Height="32" VerticalAlignment="Bottom"/>
+        <Button x:Name="ButtonRemovePlayer" Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedPlayer}" Content="Удалить" HorizontalAlignment="Left" Margin="101,0,0,12" Width="75" Height="32" VerticalAlignment="Bottom"/>
+        <Button x:Name="ButtonStartGame" Command="{Binding StartGameCommand}" Content="Начать игру" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" Width="166" Height="33" FontSize="18"/>
+    </Grid>
+</Window>
