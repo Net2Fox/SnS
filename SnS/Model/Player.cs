@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace SnS
+namespace SnS.Model
 {
     internal class Player : INotifyPropertyChanged
     {

@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows;
 
-namespace SnS
+namespace SnS.Model
 {
     internal class Cell : INotifyPropertyChanged
     {

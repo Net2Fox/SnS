@@ -1,11 +1,10 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
-using System;
-using System.Windows.Data;
-using System.Globalization;
+using SnS.Model;
 
-namespace SnS
+namespace SnS.ViewModel
 {
     internal class ApplicationViewModel : INotifyPropertyChanged
     {

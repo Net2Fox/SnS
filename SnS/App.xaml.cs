@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace stairs_and_snakes
+namespace SnS
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml
