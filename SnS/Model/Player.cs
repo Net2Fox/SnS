@@ -50,7 +50,6 @@ namespace SnS.Model
         public void Move(int num)
         {
             PlayerMove += num;
-            //System.Windows.MessageBox.Show($"{PlayerName} перешёл на {num} ходов!");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

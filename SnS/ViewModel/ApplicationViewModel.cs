@@ -8,12 +8,12 @@ namespace SnS.ViewModel
 {
     internal class ApplicationViewModel : INotifyPropertyChanged
     {
-        // Class Player
+        // Класс Player
         private Player selectedPlayer;
         
         public ObservableCollection<Player> Players { get; set; }
 
-        // команда добавления нового объекта
+        // Команда добавления нового объекта
         private RelayCommand addCommand;
         public RelayCommand AddCommand
         {
@@ -30,7 +30,7 @@ namespace SnS.ViewModel
             }
         }
 
-        // команда удаления
+        // Команда удаления
         private RelayCommand removeCommand;
         public RelayCommand RemoveCommand
         {
@@ -59,10 +59,10 @@ namespace SnS.ViewModel
             }
         }
 
-        // Class Game
+        // Класс Game
         private Game nowGame;
 
-        // команда начала игры
+        // Команда начала игры
         private RelayCommand startGameCommand;
         public RelayCommand StartGameCommand
         {
@@ -77,7 +77,8 @@ namespace SnS.ViewModel
             }
         }
         Random rand = new Random(DateTime.Now.Second);
-        // команда хода
+
+        // Команда хода
         private RelayCommand playerMoveCommand;
         public RelayCommand PlayerMoveCommand
         {
@@ -102,7 +103,7 @@ namespace SnS.ViewModel
             }
         }
 
-        // Class Cell
+        // Класс Cell
         private Cell cell;
 
         public ObservableCollection<Cell> Cells { get; set; }
